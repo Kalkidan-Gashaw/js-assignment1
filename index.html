@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Area(){
+           const side1 = document.getElementById('num1').value;
+           const side2 = document.getElementById('num2').value;
+           const side3 = document.getElementById('num3').value;
+           const semiPerimeter = (Number(side1) + Number(side2) + Number(side3))/2;
+           const area =  Math.sqrt(semiPerimeter * (semiPerimeter - side1) * (semiPerimeter - side2) * (semiPerimeter - side3));
+           document.getElementById("result1").innerHTML = 'The area of the triangle is:'+ ' '+ area;
+         
+
+       }
+       function calculator(){
+           const num1 = document.getElementById('number1').value;
+           const num2 = document.getElementById('number2').value;
+           const mul =(num1)*(num2);
+          const  div = (num1) / (num2);
+       document.getElementById("result2").innerHTML = 'The product is:' + " "+ mul  +'<br> The quotinet is:' + " " + div;
+          
+       }
+       function prefixAdder(){
+           const text = document.getElementById('text2').value;
+           console.log("text",text)
+           document.getElementById('result3').innerHTML = 'javascript' + " " + text;
+       }          
+   </script>
+   
+</head>
+<body>
+    <h2>Area of Triangle</h2>
+    <form >
+        <label>Side-1: <input type="number" id="num1" value="5"></label> <br><br>
+        <label>Side-2: <input type="number" id="num2" value="6"></label><br><br>
+        <label>Side-3: <input type="number" id="num3" value="7"></label><br><br>
+        <button type="button" onclick="Area()">Area</button>
+        <p id="result1"></p>
+    </form>
+    <br>
+    <h2>Simple Calculator</h2>
+    <form >
+        <label>Enter the first number: <input type="number" id="number1"></label> <br><br>
+        <label>Enter the secons number: <input type="number" id="number2"></label><br><br>
+        <button type="button" onclick="calculator()">calculate</button>
+    </form>
+    <p id="result2"></p>
+    <br>
+
+    <h2>prefix Adder</h2>
+    <form>
+        <label>Enter the text: <input type="text" id="text2"></label>
+        <button type="button" onclick="prefixAdder()">Add prefix</button>
+        <p id="result3"></p>
+    </form>
+
+
+
+    
+   
+</body>
+
+</html>
+
